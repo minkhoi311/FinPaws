@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-image: url('../images/bg_img.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.box {
+    background-color: #ff6f61;
+}
+
+.middle-box-left, .middle-box-right {
+    min-height: 380px;
+    max-height: 400px;
+    overflow-y: auto;  
+    background-color: #ff6f61; 
+    padding: 10px;
+    border-radius: 10px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.middle-box-left::-webkit-scrollbar,
+.middle-box-right::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn */
+}
+
+.middle-box-right {
+    position: relative;
+}
+
+.small-square>a {
+    background-color: rgba(255, 255, 255, 0.2);
+    position: fixed;
+    bottom: 34vh;
+    right: 11.5vw;
+    border-radius: 5px;
+}
+
+.small-square>a>img {
+    width: 50px;
+    height: 50px;
+}
+
+.shadow-custom {
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
+}
+
+.date {
+    border: 2px solid #fff;
+    background-color: #c2b8d2e2;
+    font-weight: bolder;
+}
+
+.show {
+    display: flex !important;
+}
+
+.hide {
+    display: none;
+}
+
+
+.expense {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px 20px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Phần category gồm icon và text căn đều */
+.expense-category {
+    display: flex;
+    align-items: center;
+    background-color: #fcd59e;
+    padding: 0.6rem;
+    border-radius: 20px;
+}
+
+/* Icon của category */
+.category-icon-container i {
+    font-size: 30px;
+}
+
+/* Text của category */
+.category-text-container {
+    font-size: 1.2rem;
+    color: whitesmoke;
+}
+
+/* Phần số tiền của expense */
+.category-text-container p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Các biểu tượng sửa và xóa */
+.action-icons i {
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+/* Tô màu các ô icon và số tiền */
+.expense-amount {
+    background-color: #ffc107;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+/* menu nè */
+.menu-box {
+    background-color: #ff6f61;
+    border-radius: 10px;
+    padding: 0.4rem;
+}
+
+.menu-item {
+    background-color: #fcd59e;
+    border-radius: 5px;
+    padding: 0.8rem;
+    color: white;
+    font-weight: bold;
+
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #f7b563;
+}
+
+
+/* Màu khi nhấn */
+.menu-item:active {
+    background-color: #a8395c;
+}
+
+.menu-item>img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+@media (max-width: 1000px) {
+    .category-text-container {
+        display: none;
+    }
+
+    .middle-box-left,
+    .middle-box-right {
+        min-height: 450px;
+    }
+
+    .small-square>a>img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-item>img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .menu-item>span {
+        display: none;
+        /* Ẩn văn bản */
+    }
+    .expense-amount > span {
+        font-size: 3vw;
+    }
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    background-color: #fcd59e;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    outline: 0;
+    border: 0;
+}
+
+.fa-solid.fa-plus {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.3rem;
+    font-size: 2.5rem;
+}
+
+
+.submenu {
+    width: 200px;
+    z-index: 10;
+    bottom: 6rem;
+    right: 1rem;
+}
+
+.submenu>li{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: transform .3s ease-in-out ;
+}
+
+.submenu>li:hover{
+    transform: scale(1.05) ;
+    font-weight: bolder;
+}
+
+.bill-tab{
+    background-color: #ff6f61;
+}
+
+/* phần thêm tiền á Quìn*/
+/* Tùy chỉnh modal */
+.modal-content {
+    background-color: #ff6f61; /* Màu cam đậm, bạn có thể thay đổi cho phù hợp */
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #fcd59e; /* Viền màu vàng nhạt */
+}
+
+.modal-header {
+    border-bottom: 1px solid #fcd59e;
+}
+
+.modal-title {
+    color: #fcd59e; /* Màu vàng nhạt cho tiêu đề */
+}
+
+.modal-body {
+    background-color: rgba(255, 255, 255, 0.1); /* Làm mờ nền modal */
+}
+
+.modal-footer {
+    border-top: 1px solid #fcd59e;
+}
+
+/* Nút đóng (close button) */
+.btn-close {
+    filter: invert(100%);
+}
+
+/* Tùy chỉnh backdrop của modal */
+.modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ đen, bạn có thể thay đổi độ mờ */
+}
